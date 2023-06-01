@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"shirshin.entity","l":"Employee"},{"p":"shirshin.entity","l":"HR"},{"p":"shirshin.entity","l":"JavaDeveloper"},{"p":"shirshin","l":"MainApp"},{"p":"shirshin.entity","l":"Manager"},{"p":"shirshin.entity","l":"NetworkEngineer"}]
