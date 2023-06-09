@@ -1,6 +1,6 @@
-package shirshin;
+package shirshin.homework_1;
 
-import shirshin.entity.*;
+import shirshin.homework_1.entity.*;
 
 import java.util.ArrayList;
 import java.util.List;

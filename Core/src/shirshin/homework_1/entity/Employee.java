@@ -1,4 +1,4 @@
-package shirshin.entity;
+package shirshin.homework_1.entity;
 
 /*
  * Абстрактный класс, описание работника
