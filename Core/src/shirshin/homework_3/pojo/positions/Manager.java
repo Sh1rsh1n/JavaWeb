@@ -5,21 +5,20 @@ import shirshin.homework_3.pojo.Employee;
 public class Manager extends Position {
 
     public Manager(String title) {
-        super(title);
+        super(title + "Manager");
     }
 
     /*
-    * метод, повышает зарплату сотрудникам
-    * @employee - сотрудник
-    * @addSalary - добавляемая зарплата
-    * @addSalaryToManager - оставим возможность повысить зарплату менеджеру
+     * метод, повышает зарплату работникам
+     * чтобы повысить зарплату работнику с должностью менеджер, нужно передать true в параметр addSalaryToManager
      */
     public static void salaryUp(Employee employee, int addSalary, boolean addSalaryToManager) {
-        if (addSalaryToManager) { // добавляем зарплату менеджерам
+        // добавляем зарплату менеджерам
+        if (addSalaryToManager && employee.getPosition() instanceof Manager) {
             employee.setSalary(employee.getSalary() + addSalary);
-            return;
         }
-        if (!(employee.getPosition() instanceof Manager)) { // добавляем зарплату другим сотрудникам
+        // добавляем зарплату другим сотрудникам
+        if (!(employee.getPosition() instanceof Manager)) {
             employee.setSalary(employee.getSalary() + addSalary);
         }
     }

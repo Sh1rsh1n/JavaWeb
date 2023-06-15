@@ -20,7 +20,7 @@ public class Employee {
         this.position = position;
         this.phone = phone;
         this.age = age;
-        this.salary = startSalary();
+        this.salary = startSalary(); // начальная зарплата работника определяется в методе startSalary() в зависимости от должности
     }
 
     public String getName() {

@@ -1,5 +1,8 @@
 package shirshin.homework_3.pojo.positions;
 
+/*
+ * Описание должности работника
+ */
 public abstract class Position {
 
     private String title;
