@@ -1,4 +1,4 @@
-package shirshin.homework_3.pojo.comparators;
+package shirshin.homework_3.comparators;
 
 import shirshin.homework_3.pojo.Employee;
 

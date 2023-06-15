@@ -1,8 +1,8 @@
 package shirshin.homework_3;
 
 import shirshin.homework_3.pojo.Employee;
-import shirshin.homework_3.pojo.comparators.EmployeeAgeComparator;
-import shirshin.homework_3.pojo.comparators.EmployeeSalaryComparator;
+import shirshin.homework_3.comparators.EmployeeAgeComparator;
+import shirshin.homework_3.comparators.EmployeeSalaryComparator;
 import shirshin.homework_3.pojo.positions.Developer;
 import shirshin.homework_3.pojo.positions.Engineer;
 import shirshin.homework_3.pojo.positions.Manager;
