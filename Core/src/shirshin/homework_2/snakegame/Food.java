@@ -1,10 +1,13 @@
 package shirshin.homework_2.snakegame;
 
+import java.time.DayOfWeek;
+import java.util.Date;
 import java.util.Random;
 
 public class Food extends Cell{
     private Random random;
     private Snake snake;
+
 
     public Food(Snake snake) {
         super(-1, -1, GameSnake.CELL_SIZE, GameSnake.FOOD_COLOR);
