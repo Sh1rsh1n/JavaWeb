@@ -1,25 +1,35 @@
-package shirshin.homework_4.model;
+
 
 public class Customer {
 
-    private String fullName;
+    private String firstName;
+    private String lastName;
     private int age;
     private String phone;
     private Gender gender;
 
-    public Customer(String fullName, int age, String phone, Gender gender) {
-        this.fullName = fullName;
+    public Customer(String firstName, String lastName, int age, String phone, Gender gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.age = age;
         this.phone = phone;
         this.gender = gender;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public int getAge() {
@@ -44,15 +54,5 @@ public class Customer {
 
     public void setGender(Gender gender) {
         this.gender = gender;
-    }
-
-    @Override
-    public String toString() {
-        return "Consumer{" +
-                "fullName='" + fullName + '\'' +
-                ", age=" + age +
-                ", phone='" + phone + '\'' +
-                ", gender=" + gender +
-                '}';
     }
 }
