@@ -1,4 +1,4 @@
-package com.geekbrains.javacore.lesson4;
+
 
 public enum ProductCategory {
 

@@ -1,4 +1,4 @@
-package com.geekbrains.javacore.lesson4;
+
 
 
 public class Order {
@@ -10,6 +10,7 @@ public class Order {
     private Discount discount;
     
     public Order(){
+        discount = chooseRandomDiscount();
     }
 
     public Order(Customer customer, Product product, int amount) {
@@ -50,17 +51,9 @@ public class Order {
     }
     
     /*
-    * выбор случайного % скидки на заказ
-    */
-    private int chooseRandomDiscount() {
-        Discount[] discounts = Discount.values();
-        return discounts[new Random().nextInt(5)].getValue();
-    }
-    
-    /*
     * расчет стоимости всех заказов с учетом скидки
     */
-    private void setCost() throws TooMuchSaleException{
+    public void setCost() throws TooMuchSaleException{
         if (product.getProductCategory().equals(ProductCategory.PREMIUM) && discount > 15) {
             throw new ToMuchDiscountException("Discount is too much!");
         } 
@@ -68,4 +61,12 @@ public class Order {
         float fullPrice = product.getPrice() * amount;
         cost = Math.round((fullPrice - fullPrice * discount / 100) * 100.0) / 100.0f;
     } 
+    
+    /*
+    * выбор случайного % скидки на заказ
+    */
+    private int chooseRandomDiscount() {
+        Discount[] discounts = Discount.values();
+        return discounts[new Random().nextInt(5)].getValue();
+    }
 }
