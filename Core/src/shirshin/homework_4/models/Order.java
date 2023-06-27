@@ -1,5 +1,9 @@
+package shirshin.homework_4.models;
 
 
+import shirshin.homework_4.exceptions.TooMuchSaleException;
+
+import java.util.Random;
 
 public class Order {
 
@@ -7,19 +11,18 @@ public class Order {
     private Product product;
     private int amount;
     private float cost;
-    private Discount discount;
+    private int discount;
     
     public Order(){
-        discount = chooseRandomDiscount();
+        randomDiscount();
     }
 
     public Order(Customer customer, Product product, int amount) {
         this.customer = customer;
         this.product = product;
         this.amount = amount;
-        discount = chooseRandomDiscount();
+        randomDiscount();
         setCost();
-        }
     }
 
     public Customer getCustomer() {
@@ -53,9 +56,9 @@ public class Order {
     /*
     * расчет стоимости всех заказов с учетом скидки
     */
-    public void setCost() throws TooMuchSaleException{
+    public void setCost() throws TooMuchSaleException {
         if (product.getProductCategory().equals(ProductCategory.PREMIUM) && discount > 15) {
-            throw new ToMuchDiscountException("Discount is too much!");
+            throw new TooMuchSaleException("Discount is too much!");
         } 
         
         float fullPrice = product.getPrice() * amount;
@@ -65,8 +68,20 @@ public class Order {
     /*
     * выбор случайного % скидки на заказ
     */
-    private int chooseRandomDiscount() {
+    private void randomDiscount() {
         Discount[] discounts = Discount.values();
-        return discounts[new Random().nextInt(5)].getValue();
+        discount = discounts[new Random().nextInt(5)].getDiscount();
+        System.out.println("Your discount: " + discount);
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "customer=" + customer.getName() + " " + customer.getSurname() +
+                ", product=" + product.getTitle() + " price: " + product.getPrice() +
+                ", amount=" + amount +
+                ", cost=" + cost +
+                ", discount=" + discount +
+                '}';
     }
 }

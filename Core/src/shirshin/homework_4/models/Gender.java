@@ -1,4 +1,4 @@
-
+package shirshin.homework_4.models;
 
 public enum Gender {
 
@@ -6,11 +6,11 @@ public enum Gender {
 
     private String gender;
 
-    public Gender(String gender) {
+    Gender(String gender) {
         this.gender = gender;
     }
     
-    public String getGender() !
+    public String getGender() {
         return gender;
     } 
 }

@@ -1,4 +1,4 @@
-
+package shirshin.homework_4.models;
 
 public class Product {
 

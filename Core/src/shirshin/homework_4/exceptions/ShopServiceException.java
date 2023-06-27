@@ -1,4 +1,4 @@
-
+package shirshin.homework_4.exceptions;
 
 
 public class ShopServiceException extends RuntimeException {

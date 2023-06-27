@@ -1,4 +1,4 @@
-
+package shirshin.homework_4.models;
 
 public enum Discount {
 
@@ -6,7 +6,7 @@ public enum Discount {
     
     private int discount;
 
-    public Discount(int discount) {
+    Discount(int discount) {
         this.discount = discount;
     }
 

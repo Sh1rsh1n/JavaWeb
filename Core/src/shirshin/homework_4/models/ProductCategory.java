@@ -1,12 +1,12 @@
-
+package shirshin.homework_4.models;
 
 public enum ProductCategory {
 
-    PREMIUM("premium"), STANDARD("standart");
+    PREMIUM("premium"), STANDARD("standard");
 
     private String category;
 
-    public ProductCategory(String category) {
+    ProductCategory(String category) {
         this.category = category;
     }
     
