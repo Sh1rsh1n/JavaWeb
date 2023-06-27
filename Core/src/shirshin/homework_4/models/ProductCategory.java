@@ -2,7 +2,7 @@ package com.geekbrains.javacore.lesson4;
 
 public enum ProductCategory {
 
-    PREMIUM("Премиальный товар"), STANDARD("Не премиальный товар");
+    PREMIUM("premium"), STANDARD("standart");
 
     private String category;
 

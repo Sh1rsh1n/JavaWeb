@@ -6,19 +6,18 @@ public class Order {
     private Customer customer;
     private Product product;
     private int amount;
-    private final float orderPrice;
+    private float cost;
+    private Discount discount;
+    
+    public Order(){
+    }
 
-    public Order(Customer customer, Product product, int amount, int discount) throws TooMuchSaleException {
+    public Order(Customer customer, Product product, int amount) {
         this.customer = customer;
         this.product = product;
         this.amount = amount;
-
-        if (product.getProductCategory() == ProductCategory.PREMIUM && discount > 15) {
-            throw new TooMuchSaleException("Discount is too much!");
-        } else {
-            float beforeDiscount = product.getPrice() * amount;
-            this.orderPrice = Math.round((beforeDiscount - beforeDiscount * discount / 100) * 100.0) / 100.0f;
-
+        discount = chooseRandomDiscount();
+        setCost();
         }
     }
 
@@ -46,7 +45,27 @@ public class Order {
         this.amount = amount;
     }
 
-    public float getOrderPrice() {
-        return orderPrice;
+    public float getCost() {
+        return cost;
     }
+    
+    /*
+    * выбор случайного % скидки на заказ
+    */
+    private int chooseRandomDiscount() {
+        Discount[] discounts = Discount.values();
+        return discounts[new Random().nextInt(5)].getValue();
+    }
+    
+    /*
+    * расчет стоимости всех заказов с учетом скидки
+    */
+    private void setCost() throws TooMuchSaleException{
+        if (product.getProductCategory().equals(ProductCategory.PREMIUM) && discount > 15) {
+            throw new ToMuchDiscountException("Discount is too much!");
+        } 
+        
+        float fullPrice = product.getPrice() * amount;
+        cost = Math.round((fullPrice - fullPrice * discount / 100) * 100.0) / 100.0f;
+    } 
 }
